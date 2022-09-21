@@ -3,8 +3,8 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
  
 class AddStudent extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     //Neccessary information to post and communicate errors/success
     this.state={ name:'',uEmail:'', message:'' };
   }
@@ -32,7 +32,7 @@ class AddStudent extends React.Component {
       .then(responseData => {
         const { message } = responseData;
         this.setState({ 
-          message: message 
+          message 
         });
       })
       .catch(err => console.error(err))
@@ -51,13 +51,13 @@ class AddStudent extends React.Component {
         <h3>Add a New Student </h3>
 
         <TextField autoFocus style = {{width:400}} 
-             label="New Student's Name" name="name" 
+             id="nameIn" label="New Student's Name" name="name" 
              onChange={this.handleChange}  value={name} /> 
         <br/> <br/>
-        <TextField style = {{width:400}} label="New Students's Unique Email" name="uEmail" 
+        <TextField style = {{width:400}} id="emailIn" label="New Students's Unique Email" name="uEmail" 
              onChange={this.handleChange}  value={uEmail} /> 
         <br/> <br/>
-        <Button variant="outlined" color="primary" style={{margin: 10}}
+        <Button id="addStudentButton" variant="outlined" color="primary" style={{margin: 10}}
              onClick={this.handleSubmit} >Add Student</Button>
         <h3>{message}</h3>
       </div>
