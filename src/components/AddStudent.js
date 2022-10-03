@@ -59,7 +59,7 @@ class AddStudent extends React.Component {
         <br/> <br/>
         <Button id="addStudentButton" variant="outlined" color="primary" style={{margin: 10}}
              onClick={this.handleSubmit} >Add Student</Button>
-        <h3>{message}</h3>
+        <h3 id="respMessage">{message}</h3>
       </div>
       ); 
   }
